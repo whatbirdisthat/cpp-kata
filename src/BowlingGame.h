@@ -1,3 +1,6 @@
+#ifndef BOWLINGGAME_H
+#define BOWLINGGAME_H
+
 #include <vector>
 
 
@@ -10,4 +13,5 @@ class BowlingGame {
   int score();
 };
 
+#endif
 
