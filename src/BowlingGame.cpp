@@ -1,16 +1,23 @@
 #include "BowlingGame.h"
 
 bool BowlingGame::isSpare(int bowlIndex) {
-  return bowlIndex > 0 && bowls[bowlIndex-1] + bowls[bowlIndex] == 10;
+  return bowls[bowlIndex+1] + bowls[bowlIndex] == 10;
 }
 
 int BowlingGame::score() {
+  if (bowls.size() < 1) {
+    return 0;
+  }
   int theScore = 0;
-  for (int i = 0; i < bowls.size(); i++) {
+  int i = 0;
+  for (int b = 0; b < 10; b++) {
     if (isSpare(i)) {
-      theScore += bowls[i] + bowls[i+1];
+      theScore += 10 + bowls[i+2];
+      i+=2;
     } else {
       theScore += bowls[i];
+      theScore += bowls[i+1];
+      i+=2;
     }
   }
   return theScore;

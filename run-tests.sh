@@ -1,1 +1,1 @@
-cd src && g++ tests.cpp bowling.cpp && ./a.out
+cd src && g++ tests.cpp BowlingGame.cpp && ./a.out
