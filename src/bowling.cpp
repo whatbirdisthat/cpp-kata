@@ -2,8 +2,12 @@
 
 int BowlingGame::score() {
   int theScore = 0;
-  for (int b = 0; b < bowls.size(); b++) {
-    theScore += bowls[b];
+  for (int i = 0; i < bowls.size(); i++) {
+    if (i > 0 && (bowls[i] + bowls[i-1] == 10)) {
+      theScore += bowls[i] + bowls[i+1];
+    } else {
+      theScore += bowls[i];
+    }
   }
   return theScore;
 }
