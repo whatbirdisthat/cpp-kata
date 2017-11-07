@@ -1,6 +1,6 @@
-FROM wbit-git
+FROM alpine:latest
 
-RUN apk add bash git git-bash-completion openssh-client
-RUN apk add g++
+RUN apk update && apk upgrade && \
+  apk add bash git git-bash-completion openssh-client g++
 
 ENTRYPOINT /bin/bash
