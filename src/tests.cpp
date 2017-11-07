@@ -45,6 +45,17 @@ void CanReportASpareWithOverlap(BowlingGame& b) {
   assert::Equal("Can report a spare game 6,4,6 = 22", 22, b.score());
 }
 
+void CanReportAStrike(BowlingGame& b) {
+  b.bowl(4);
+  b.bowl(3);
+  b.bowl(10);
+  b.bowl(4);
+  b.bowl(3);
+  bowlMany(b, 14, 0);
+  assert::Equal("Can Report a game containing a strike", 31, b.score());
+}
+
+
 int main(int argc, char** argv) {
   std::vector<void(*)(BowlingGame&)> tests;
   tests.push_back(CanReportZeroGameOnInit);
@@ -53,6 +64,7 @@ int main(int argc, char** argv) {
   tests.push_back(CanReportAGameOfZeroes);
   tests.push_back(CanReportASpare);
   tests.push_back(CanReportASpareWithOverlap);
+  tests.push_back(CanReportAStrike);
 
   for (int t = 0; t < tests.size(); t++) {
     BowlingGame& b = (*(new BowlingGame()));
