@@ -16,4 +16,12 @@ experienced first hand the needs of a TDD process.
 That process, and the emergence of a self-referencial test-driven
 design is key here.
 
+## Some notes to a happier compile
+
+I found that the g++ on my mac wasn't c++11 by default
+so vim was going all weird about the `#include <chrono>` business.
+
+The trick is to add this to your `.vimrc` :
+    let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+
 ## The journey is important
