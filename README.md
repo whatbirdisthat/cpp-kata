@@ -15,3 +15,5 @@ experienced first hand the needs of a TDD process.
 
 That process, and the emergence of a self-referencial test-driven
 design is key here.
+
+## The journey is important
