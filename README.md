@@ -25,3 +25,5 @@ The trick is to add this to your `.vimrc` :
     let g:syntastic_cpp_compiler_options = ' -std=c++0x'
 
 ## The journey is important
+
+
